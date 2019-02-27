@@ -18,8 +18,8 @@ class Cocotte {
         };
         //   console.log($(this));
         //   console.log($(this).attr("title"));
-        console.log(data);
       });
+      console.log(data);
     } catch (error) {
       console.log(error.response.body);
       //=> 'Internal server error ...'
