@@ -2,8 +2,8 @@ const got = require("got");
 const client = got.extend({
   baseUrl: "https://chat.phedre.fr/api/v1/",
   headers: {
-    "X-User-Id": "nkwMExQG7moyvbYva",
-    "X-Auth-Token": "NpO5ZJ9t7VIn3AIya5Uim-u7xvJkfy5YM_2y8DFgVyI"
+    "X-User-Id": "**",
+    "X-Auth-Token": "**"
   }
 });
 
