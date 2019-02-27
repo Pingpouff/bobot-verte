@@ -1,18 +1,19 @@
 const got = require("got");
+const config = require("./rocket.config.private.json");
 const client = got.extend({
-  baseUrl: "https://chat.phedre.fr/api/v1/",
+  baseUrl: config.baseUrl,
   headers: {
-    "X-User-Id": "**",
-    "X-Auth-Token": "**"
+    "X-User-Id": config.userId,
+    "X-Auth-Token": config.authToken,
   }
 });
 
 class RocketChat {
-  async history() {
+  async history(roomId, oldest) {
     try {
       // const searchParams = new URLSearchParams([['roomId', "25T5Eif6QMF4j6pHo"]]);
       const response = await client.get(
-        "channels.history?roomId=25T5Eif6QMF4j6pHo&oldest=2010-05-30T13:42:25.304Z"
+        `channels.history?roomId=${roomId}&oldest=${oldest}`
       );
       const body = response.body;
       const messages = JSON.parse(body).messages;
