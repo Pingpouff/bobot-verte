@@ -4,7 +4,9 @@
   "description": "cocotte bot",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "init": "init rocket secret config",
+    "publish": "node src/index.js"
   },
   "author": "pingpouff",
   "license": "ISC",

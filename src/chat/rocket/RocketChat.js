@@ -7,8 +7,12 @@ const client = got.extend({
     "X-Auth-Token": config.authToken
   }
 });
+const MessageClient = require("./api/Message.client");
 
 class RocketChat {
+  constructor() {
+    this.messages = new MessageClient(client);
+  }
   async info(roomName) {
     try {
       const response = await client.get(`channels.info?roomName=${roomName}`);
@@ -26,6 +30,7 @@ class RocketChat {
         `channels.history?roomId=${roomId}&oldest=${oldest}`
       );
       const body = response.body;
+      // console.log(JSON.parse(body));
       const messages = JSON.parse(body).messages;
       // console.log(messages);
       // console.log(messages.length);
@@ -34,6 +39,7 @@ class RocketChat {
         // console.log(messages[i]);
         var author = message.u.name;
         var content = message.msg;
+        console.log(message.reactions);
         console.log(author + " say: " + content);
       }
     } catch (error) {
@@ -57,15 +63,15 @@ class RocketChat {
     }
   }
 
-  async sendMessage(roomId) {
+  async sendMessage(roomId, text) {
     try {
       const response = await client.post(`chat.sendMessage`, {
         body: JSON.stringify({
           message: {
             // _id="test",
             rid: roomId,
-            msg: "Sample message",
-            alias: "Gruggy"
+            msg: text,
+            alias: "bobotverte"
           }
         })
       });
