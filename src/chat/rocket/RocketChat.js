@@ -73,7 +73,7 @@ class RocketChat {
             alias: "bobotverte",
             // avatar: "https://cdn.dribbble.com/users/8842/screenshots/226319/robotchicken.png",
             // avatar:"https://cdn.dribbble.com/users/178723/screenshots/2856202/robotchicken2.png",
-            avatar:"http://unecocotteverte.com/img/favicon.ico?1536335416", // TODO should be out of here
+            avatar: "http://unecocotteverte.com/img/favicon.ico?1536335416" // TODO should be out of here
           }
         })
       });

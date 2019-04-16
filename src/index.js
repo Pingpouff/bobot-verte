@@ -3,7 +3,7 @@ const rocket = new (require("./chat/rocket/RocketChat"))();
 
 // "channels.history?roomId=25T5Eif6QMF4j6pHo&oldest=2010-05-30T13:42:25.304Z"
 // const channelCocoteSandBox = "25T5Eif6QMF4j6pHo"; // TODO move to external config file
-const arianeFoodCocotte = 'T8FpTnX4rFSCJh2QY';
+const arianeFoodCocotte = "T8FpTnX4rFSCJh2QY";
 const channelToPublishIn = arianeFoodCocotte;
 // const channelToPublishIn = channelCocoteSandBox;
 
